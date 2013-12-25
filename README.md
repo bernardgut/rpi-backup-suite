@@ -32,6 +32,8 @@ A backup user is an unprivileged UNIX account on the server. Normally each user 
 
 on the server where `hostname` is the name of the client host and `username` is the name of the user on that machine for whom this account is made. Of course you can use any other names for `hostname` and `username` as well, but it's generally a good idea to stick to this naming convention. The resulting UNIX username will be the combination of both.
 
+**TIP:** You need `realpath` command for this script to be successfull. This command is non-standard in the current BASH. If you don't have it, get it with your current package manager. i.e. `apt-get install realpath`
+
 The optional third parameter specifies the path to the SSH public key file which the user will use to log into the NAS. If you don't specify it, the user won't be able to log in at all. But you can add one later at any time by running
 
     rs-add-ssh-key hostname username ssh-public-key-file

@@ -8,5 +8,6 @@ if [ "${BACKUP_ROOT}" == "" ] || [ "$(realpath ${BACKUP_ROOT})" == "/" ]; then
 	exit 1
 fi
 
+mkdir "${BACKUP_ROOT}/etc"
 touch "${BACKUP_ROOT}/etc/passwd"
 cat /etc/passwd | grep "::${BACKUP_ROOT}/[^/:]\+:/bin/[^:]\+$" > "${BACKUP_ROOT}/etc/passwd"
