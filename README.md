@@ -73,6 +73,8 @@ and restart OpenSSH. Your backup users are now chrooted into `/bkp`.
 
 **NOTE:** When using a chroot environment and you change anything in your user configuration (e.g. the username) you need to run `rs-update-passwd` or your user might not be able to log in anymore.
 
+At this point, if you use another backup folder than `/bkp`, copy the contents (global configuration file) of `/bkp` to your own backup folder
+
 #### Changing the rotation options/backup levels
 To change how many increments of which level are kept, edit the file `/bkp/etc/rsnapshot.global.conf`. This is the global configuration file for rsnapshot which will be included in each user-specific configuration. There you can tweak the names and numbers for all backup levels.
 
