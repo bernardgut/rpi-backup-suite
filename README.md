@@ -93,6 +93,17 @@ As you already know, all the client configuration options are defined in `/usr/l
 
     rs-backup-run --help
 
+### Windows Client (beta)
+To set up the client on a windows machine, you will need to set up cygwin in order to access the windows front-end of `rsync`. Get the latest version on the official cygwin [website](http://cygwin.com/). On the setup prompt, add the `openssh` and `rsync` packages to the default install. 
+
+**NOTE:** Cygwin's rsync doesn't handle ntfs file permissions the same way as the classic unix version would. You need to add the option `noacl` to your cygwin mount config file (C:\cygwin\etc\fstab). More info on this issue can be found [here](http://stackoverflow.com/questions/5798807/rsync-permission-denied-created-directories-have-no-permissions).
+
+You need to generate ssh keys in order to login to the backup server witout password (this will allow you to automate backups on windows). This is done the same way as the above `linux` case : simply run `ssh-keygen` from the cygwin prompt and press enter when asked. Your public key will be generated and stored in `C:\Users\<user>\.ssh\id_rsa`. Transfer this file to your server with smb/ftp/usb or any other means, and follow the above procedure for adding backup users.
+
+Finally, you simply need to copy the contents of the `client` directory to your windows session home folder on the client machines. Then rename the file `C:\Users\<user>\client-config.example` to `C:\Users\<user>\client-config`. Finally edit it and replace the value of `REMOTE_HOST` with the hostname or IP address of your NAS.
+
+To run the backup, launch the `rs-backup.bat` script. You should see statistics on your command prompt. A log file is generated with DEBUG output on `C:\Users\<user>\rs-backup.user.log` (default)
+
 ## Backup strategies
 The intended use case for rs-backup-suite is as follows: you set up the server part on your NAS. Then you create a backup user for each user on each client machine.
 
