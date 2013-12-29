@@ -1,16 +1,16 @@
-# rs-backup-suite
+# rpi-backup-suite
 
-rs-backup-suite is a set of shell scripts for setting up a custom NAS on a computer in the network. It uses [rsync](http://rsync.samba.org/) and [rsnapshot](http://www.rsnapshot.org/). This fork is a custom setup for a RaspberryPi-based NAS solution on the LAN
+rpi-backup-suite is a set of shell scripts for setting up a custom NAS on a computer in the network. It uses [rsync](http://rsync.samba.org/) and [rsnapshot](http://www.rsnapshot.org/). rpi-backup script is built upon a custom setup of rs-backup-suite for a linux-box-based (rPi) NAS solution. rpi-backup suite includes a windows client.
 
 ## How it works
-rs-backup-suite is designed for push backups, which means the client pushes its files to the server. This is ideal for computers which are not always on such as most desktop PCs.
+rpi-backup-suite is designed for push backups, which means the client pushes its files to the server. This is ideal for computers which are not always on such as most desktop PCs.
 
 It is also a user-centric backup system. That means each user creates his own backup on the NAS instead of root backing up the whole machine at once (although this is possible). That also means that each user has a UNIX account on the NAS. The NAS username is usually `<hostname>-<local user name>` (e.g. `mymachine-johndoe`).
 
 On the client machine(s) each user can create a file called `.rs-backup-include` (name is configurable) inside his home directory which includes the list of files that should be considered by the backup. Additionally root can maintain a similar file located at `/usr/local/etc/rs-backup/include-files` for the system files.
 
 ## Setup (please read this carefully before performing any actions!)
-rs-backup-suite is split into two parts: a client part for pushing the backup to the NAS and a server part which runs on the NAS itself.
+rpi-backup-suite is split into two parts: a client part for pushing the backup to the NAS and a server part which runs on the NAS itself.
 
 ### Server
 For the server part simply copy the contents of the `server` directory to your root directory and all the necessary files will be in place. Make sure that you copy the file permissions as well! Furthermore make sure that `/usr/local/bin` and `/usr/local/sbin` are in your `$PATH` environment variable as root. Finally rename the file `/usr/local/etc/server-config.example` to `/usr/local/etc/server-config`.
@@ -43,7 +43,7 @@ The optional third parameter specifies the path to the SSH public key file which
 **TIP:** If you don't remember the parameters for all these commands, simply run them without any and you'll get simple usage instructions.
 
 #### Making the chroot work
-rs-backup-suite can chroot backup users into the backup home base directory. For this to work you need to add a few folders to your `/bkp` directory:
+rpi-backup-suite can chroot backup users into the backup home base directory. For this to work you need to add a few folders to your `/bkp` directory:
     
     mkdir -p "/bkp/"{"bin","lib","usr/bin","usr/lib","usr/local/bin","/usr/share/perl5","dev"}
     
