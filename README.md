@@ -1,4 +1,4 @@
-# rpi-backup-suite
+# rs-backup-suite
 
 rs-backup-suite is a set of shell scripts for setting up a custom NAS on a computer in the network. It uses [rsync](http://rsync.samba.org/) and [rsnapshot](http://www.rsnapshot.org/). This fork is a custom setup for a RaspberryPi-based NAS solution on the LAN
 
