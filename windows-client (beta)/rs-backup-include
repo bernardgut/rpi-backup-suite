@@ -1,0 +1,17 @@
+# List of files and folders to include in a system-wide backup.
+# 
+# NOTE: you should only specify files that are part of the
+# system and/or owned by user. 
+# You can add system files and files in any location /cygdrive/ Due to ntfs chmod 
+# compatibiliy, you should add the 'noacl' option to your C:\cygwin\etc\fstab 
+# so that access rights are consistent on the server side
+# 
+# For help with the syntax of this file consult the FILTER RULES
+# section of the rsync(1) man page.
+# The below exemple sets your windows home folder <myHome> and all 
+# it's content for backup
+
+/cygdrive/
+/cygdrive/c
+/cygdrive/c/Users
+/cygdrive/c/Users/<myHome>/***
