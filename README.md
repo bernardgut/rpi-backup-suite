@@ -1,6 +1,6 @@
 # rpi-backup-suite
 
-rpi-backup-suite is a set of shell scripts for setting up a custom NAS on a computer in the network. It uses [rsync](http://rsync.samba.org/) and [rsnapshot](http://www.rsnapshot.org/) and is built upon a custom setup of `rs-backup-suite`. rpi-backup is aimed at linuxbox NAS solutions such as raspberryPi configurations. rpi-backup suite includes a windows client.
+rpi-backup-suite is a set of shell scripts for setting up a custom NAS on a computer in the network. It uses [rsync](http://rsync.samba.org/) and [rsnapshot](http://www.rsnapshot.org/) and is built upon a custom setup of `rs-backup-suite`. rpi-backup is aimed at Linux Box home NAS solutions (such as raspberryPi). rpi-backup suite includes a windows client.
 
 ## How it works
 rpi-backup-suite is designed for push backups, which means the client pushes its files to the server. This is ideal for computers which are not always on such as most desktop PCs.
